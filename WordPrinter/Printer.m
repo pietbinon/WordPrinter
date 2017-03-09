@@ -14,19 +14,40 @@
 
 - (void) printWord: (NSString *) word {
     
+    if ([self.delegate respondsToSelector: @selector(printUppercase:)]) {
+        
+    
+    
     if ([self.delegate shouldAddStar: word]) {
     
         int printTimes = [self.delegate printer: self numberOfTimesToPrint: word];
     
         for (int i = 0; i < printTimes; i++)
-            NSLog (@"%@", [@"*" stringByAppendingString:[word stringByAppendingString: @"*"]]);
+            NSLog (@"%@", [[@"*" stringByAppendingString:[word stringByAppendingString: @"*"]] uppercaseString]);
         
     } else {
         
         int printTimes = [self.delegate printer: self numberOfTimesToPrint: word];
         
         for (int i = 0; i < printTimes; i++)
-            NSLog (@"%@", word);
+            NSLog (@"%@", [word uppercaseString]);
+    }
+        
+    } else {
+        
+        if ([self.delegate shouldAddStar: word]) {
+            
+            int  printTimes = [self.delegate printer: self numberOfTimesToPrint: word];
+            
+            for (int i = 0; i < printTimes; i++)
+                NSLog (@"%@", [@"*" stringByAppendingString: [word stringByAppendingString: @"*"]]);
+        } else {
+            
+            int printTimes = [self.delegate printer: self numberOfTimesToPrint: word];
+            
+            for (int i = 0; i < printTimes; i++)
+                NSLog (@"%@", word);
+        }
     }
 }
 

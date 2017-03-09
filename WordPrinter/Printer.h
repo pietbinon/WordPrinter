@@ -17,8 +17,12 @@
 
 @protocol PrinterDelegate <NSObject>
 
+@required
 - (int) printer: (Printer *) printer numberOfTimesToPrint: (NSString *) word;
 - (BOOL) shouldAddStar: (NSString *) word;
+
+@optional
+- (void) printUppercase: (NSString *) text;
 
 @end
 

@@ -33,4 +33,10 @@
 }
 
 
+- (void) printUppercase: (NSString *) word {
+    
+    [word uppercaseString];
+}
+
+
 @end

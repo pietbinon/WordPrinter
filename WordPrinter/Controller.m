@@ -7,7 +7,19 @@
 
 #import "Controller.h"
 
+
+
 @implementation Controller
+
+
+- (BOOL) shouldAddStar: (NSString *) word {
+    
+    if ([word containsString: @"time"])
+        return YES;
+    else
+        return NO;
+}
+
 
 -(int)printer:(Printer *)printer numberOfTimesToPrint:(NSString *)text {
     
@@ -19,5 +31,6 @@
         return 1;
     }
 }
+
 
 @end

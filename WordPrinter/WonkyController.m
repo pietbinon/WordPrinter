@@ -8,10 +8,24 @@
 
 #import "WonkyController.h"
 
+
+
+
 @implementation WonkyController
+
+
+- (BOOL) shouldAddStar: (NSString *) word {
+    
+    if ([word hasPrefix: @"A"])
+        return YES;
+    else
+        return NO;
+}
+
 
 -(int)printer:(Printer *)printer numberOfTimesToPrint:(NSString *)text {
     return 10;
 }
+
 
 @end

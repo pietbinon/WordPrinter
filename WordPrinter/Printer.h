@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-//Need this to have the protocol accept the type Printer * because it is defined before the @interface Printer
+//Need this to have the protocol accept the type Printer * because it is defined before the @interface Printer.
 @class Printer;
 
 
